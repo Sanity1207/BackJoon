@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int getLeftOver(int a, int i);
+unsigned long long getLeftOver(int a, int i);
 
 int main(){
     int n;
@@ -26,12 +26,12 @@ int main(){
     cout<<finAnswer;
 }
 
-int getLeftOver(int a, int i){
+unsigned long long getLeftOver(int a, int i){
     //a * 31^i;
     int addition = 1;
     for(int k = 0;k<i;k++){
         addition*=31;
         addition = addition % 1234567891;
     }
-    return addition;
+    return addition*a;
 }
